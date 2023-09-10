@@ -79,7 +79,7 @@ const HomeScreen = ({ navigation }) => {
 
           <View className="flex-1">
             <Text className="font-bold text-xl">
-              Catering Online
+              Maulana Catering
             </Text>
           </View>
 

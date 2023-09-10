@@ -111,7 +111,7 @@ const DetailDrinkCard = ({ route, navigation }) => {
       formData.append('name', name);
       formData.append('address', address);
       formData.append('phone', phone);
-      formData.append('qtyFood', count);
+      formData.append('qtyDrink', count);
       formData.append('drinkId', data._id);
       formData.append('totalPrice', priceTotal);
 
@@ -249,7 +249,8 @@ const DetailDrinkCard = ({ route, navigation }) => {
                 <TextInput
                   className="w-full h-12 border rounded p-2 mb-2"
                   placeholder="Nomor HP"
-                  onChangeText={(text) => setPhone(text)}
+                  onChangeText={(numeric) => setPhone(numeric)}
+                  inputMode="numeric"
                   value={phone}
                 />
                   <TouchableOpacity

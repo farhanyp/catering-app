@@ -189,7 +189,8 @@ const ShowFood = ({navigation, foods, token}) => {
                         </Card.Actions>
 
                         <Modal visible={isModalVisible} animationType="slide">
-                            <View className="flex justify-end items-end">
+                          <View className="flex-1 px-3 text-black">
+                          <View className="flex justify-end items-end">
                             <TouchableOpacity
                                     className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
                                     onPress={() => setIsModalVisible(false)}
@@ -246,7 +247,9 @@ const ShowFood = ({navigation, foods, token}) => {
                                       "Pesan"
                                     )}
                                   </Text>
-                                </TouchableOpacity>
+                                </TouchableOpacity>  
+                          </View>
+                            
                         </Modal>
 
                     </Card>

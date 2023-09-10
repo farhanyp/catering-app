@@ -248,71 +248,72 @@ const FoodScreen = ({navigation}) => {
       </View>
 
       <Modal visible={isModalVisible} animationType="slide">
-                <View className="flex justify-end items-end">
-                <TouchableOpacity
-                      className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
-                      onPress={() => setIsModalVisible(false)}
-                    >
-                      <Text className="text-white font-bold text-xl">X</Text>
-                </TouchableOpacity>
-                </View>
-                <View className="flex justify-center items-center">
-                <Text className="text-3xl font-bold pb-4">Produk:</Text>
-                </View>
-                <TextInput
-                  className="w-full h-12 border rounded p-2 mb-2"
-                  placeholder="Nama"
-                  onChangeText={(text) => setName(text)}
-                  value={name}
-                />
-                <TextInput
-                  className="w-full h-12 border rounded p-2 mb-2"
-                  placeholder="Jumlah"
-                  onChangeText={(numeric) => setQty(numeric)}
-                  value={qty}
-                  inputMode='numeric'
-                />
-                <TextInput
-                  className="w-full h-12 border rounded p-2 mb-2"
-                  placeholder="Harga"
-                  onChangeText={(numeric) => setPrice(numeric)}
-                  value={price}
-                  inputMode='numeric'
-                />
-                <TextInput
-                  className="w-full h-12 border rounded p-2 mb-2"
-                  placeholder="Deskripsi"
-                  onChangeText={(text) => setDescription(text)}
-                  value={description}
-                />
-                  <TouchableOpacity
-                    style={{ backgroundColor: 'blue', padding: 10, borderRadius: 5, marginVertical: 10 }}
-                    onPress={pickImage}
-                  >
-                    <Text style={{ color: 'white', fontWeight: 'bold' }}>Pilih Gambar</Text>
-                  </TouchableOpacity>
+        <View className="flex-1 px-3 text-black">
+          <View className="flex justify-end items-end">
+          <TouchableOpacity
+                className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
+                onPress={() => setIsModalVisible(false)}
+              >
+                <Text className="text-white font-bold text-xl">X</Text>
+          </TouchableOpacity>
+          </View>
+          <View className="flex justify-center items-center">
+          <Text className="text-3xl font-bold pb-4">Produk:</Text>
+          </View>
+          <TextInput
+            className="w-full h-12 border rounded p-2 mb-2"
+            placeholder="Nama"
+            onChangeText={(text) => setName(text)}
+            value={name}
+          />
+          <TextInput
+            className="w-full h-12 border rounded p-2 mb-2"
+            placeholder="Jumlah"
+            onChangeText={(numeric) => setQty(numeric)}
+            value={qty}
+            inputMode='numeric'
+          />
+          <TextInput
+            className="w-full h-12 border rounded p-2 mb-2"
+            placeholder="Harga"
+            onChangeText={(numeric) => setPrice(numeric)}
+            value={price}
+            inputMode='numeric'
+          />
+          <TextInput
+            className="w-full h-12 border rounded p-2 mb-2"
+            placeholder="Deskripsi"
+            onChangeText={(text) => setDescription(text)}
+            value={description}
+          />
+            <TouchableOpacity
+              style={{ backgroundColor: 'blue', padding: 10, borderRadius: 5, marginVertical: 10 }}
+              onPress={pickImage}
+            >
+              <Text style={{ color: 'white', fontWeight: 'bold' }}>Pilih Gambar</Text>
+            </TouchableOpacity>
 
-                  {
-                    canPostData ? 
-                    <TouchableOpacity
-                      className="w-full h-12 bg-blue-500 rounded items-center justify-center"
-                      onPress={postOrderData}
-                    >
-                    <Text className="text-white text-lg">
-                    {loading ? (
-                      <ActivityIndicator
-                        animating={loading}
-                        size="large"
-                      />
-                    ) : (
-                      "Pesan"
-                    )}
-                  </Text>
-                </TouchableOpacity>
-                :
-                null
-                  }
-
+            {
+              canPostData ? 
+              <TouchableOpacity
+                className="w-full h-12 bg-blue-500 rounded items-center justify-center"
+                onPress={postOrderData}
+              >
+              <Text className="text-white text-lg">
+              {loading ? (
+                <ActivityIndicator
+                  animating={loading}
+                  size="large"
+                />
+              ) : (
+                "Pesan"
+              )}
+            </Text>
+          </TouchableOpacity>
+          :
+          null
+            }
+        </View>
       </Modal>
 
       <View>

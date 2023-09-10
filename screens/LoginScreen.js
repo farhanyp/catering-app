@@ -96,7 +96,7 @@ const LoginScreen = ({ navigation }) => {
         </Text>
       </TouchableOpacity>
       <Text className=" mt-8 h-10 rounded items-center justify-center">
-        Have you registered yet?
+        apakah kamu sudah daftar ?
       </Text>
       <TouchableOpacity
         className=" bg-slate-500 w-20 h-10 rounded items-center justify-center"

@@ -185,10 +185,11 @@ const ShowDrink = ({navigation, drinks, token}) => {
                           setDescription(item ? item.description : "");
                           setIsModalVisible(true);
                         }}>Update</Button>
-                        <Button className="bg-red-500" rippleColor="white" onPress={() => deleteCard(item._id)}>Delete</Button>
+                        <Button className="bg-red-500" rippleColor="white" onPress={() => deleteCard(item._id)}>Hapus</Button>
                         </Card.Actions>
 
                         <Modal visible={isModalVisible} animationType="slide">
+                        <View className="flex-1 px-3 text-black">
                             <View className="flex justify-end items-end">
                             <TouchableOpacity
                                     className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
@@ -198,7 +199,7 @@ const ShowDrink = ({navigation, drinks, token}) => {
                             </TouchableOpacity>
                             </View>
                             <View className="flex justify-center items-center">
-                            <Text className="text-3xl font-bold pb-4">Drink:</Text>
+                            <Text className="text-3xl font-bold pb-4">Minuman:</Text>
                             </View>
                             <TextInput
                                 className="w-full h-12 border rounded p-2 mb-2"
@@ -243,17 +244,18 @@ const ShowDrink = ({navigation, drinks, token}) => {
                                         size="large"
                                       />
                                     ) : (
-                                      "Pesan"
+                                      "Ubah Data"
                                     )}
                                   </Text>
                                 </TouchableOpacity>
+                            </View>
                         </Modal>
 
                     </Card>
                 )
                 })
                 ) : (
-                <Text>No data available.</Text>
+                <Text>Tidak ada data yang tersedia.</Text>
                 )}
         </View>
 

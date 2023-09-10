@@ -49,10 +49,6 @@ const FoodRow = ({
         </Text>
       </View>
 
-      <Text className="text-xs text-gray-500 px-4">
-        {description}
-      </Text>
-
       <ScrollView
         horizontal
         contentContainerStyle={{

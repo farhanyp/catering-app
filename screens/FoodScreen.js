@@ -145,7 +145,7 @@ const FoodScreen = ({navigation}) => {
           <View className="flex-row items-center mx-4 space-x-2">
             <View className="flex-1">
               <Text className="font-bold text-xl">
-                Food Catering Online
+                Makanan - Molana Catering
               </Text>
             </View>
           </View>
@@ -178,7 +178,7 @@ const FoodScreen = ({navigation}) => {
               }
             >
               <Text className="text-white">
-                Food
+                Makanan
               </Text>
             </TouchableOpacity>
 
@@ -189,7 +189,7 @@ const FoodScreen = ({navigation}) => {
               }
             >
               <Text className="text-white">
-                Drink
+                Minuman
               </Text>
             </TouchableOpacity>
 
@@ -201,7 +201,7 @@ const FoodScreen = ({navigation}) => {
               }
             >
               <Text className="text-white">
-                Packages
+                Paketan
               </Text>
             </TouchableOpacity>
 
@@ -213,7 +213,7 @@ const FoodScreen = ({navigation}) => {
               }
             >
               <Text className="text-white">
-                Order
+                Pesanan
               </Text>
             </TouchableOpacity>
 
@@ -258,7 +258,7 @@ const FoodScreen = ({navigation}) => {
           </TouchableOpacity>
           </View>
           <View className="flex justify-center items-center">
-          <Text className="text-3xl font-bold pb-4">Produk:</Text>
+          <Text className="text-3xl font-bold pb-4">Makanan:</Text>
           </View>
           <TextInput
             className="w-full h-12 border rounded p-2 mb-2"
@@ -306,7 +306,7 @@ const FoodScreen = ({navigation}) => {
                   size="large"
                 />
               ) : (
-                "Pesan"
+                "Buat Data"
               )}
             </Text>
           </TouchableOpacity>

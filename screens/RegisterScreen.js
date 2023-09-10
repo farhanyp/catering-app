@@ -11,7 +11,6 @@ import {
   ActivityIndicator,
   Button,
 } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
 const RegisterScreen = ({ navigation }) => {
@@ -36,6 +35,10 @@ const RegisterScreen = ({ navigation }) => {
         }
       );
 
+      Alert.alert(
+        "Berhasil!",
+        `Akun anda berhasil didaftarkan`
+      );
       setLoading(false);
       navigation.navigate("Login");
     } catch (error) {
@@ -83,7 +86,7 @@ const RegisterScreen = ({ navigation }) => {
         </Text>
       </TouchableOpacity>
       <Text className=" mt-8 h-10 rounded items-center justify-center">
-        Do already have account ?
+        Apakah kamu mempunyai akun ?
       </Text>
       <TouchableOpacity
         className=" bg-blue-500 w-20 h-10 rounded items-center justify-center"

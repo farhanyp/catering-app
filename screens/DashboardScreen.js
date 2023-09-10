@@ -10,7 +10,6 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { LineChart } from 'react-native-chart-kit';
 import PowerIcon from "../assets/power.svg";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import OrderChart from "../components/OrderChart"
@@ -96,7 +95,7 @@ const DashboardScreen = ({ navigation }) => {
         <View className="flex-row items-center mx-4 space-x-2">
           <View className="flex-1">
             <Text className="font-bold text-xl">
-              Dashboard Catering Online
+              Dashboard - Molana Catering
             </Text>
           </View>
 
@@ -137,7 +136,7 @@ const DashboardScreen = ({ navigation }) => {
             }
           >
             <Text className="text-white">
-              Food
+            Makanan
             </Text>
           </TouchableOpacity>
 
@@ -148,7 +147,7 @@ const DashboardScreen = ({ navigation }) => {
             }
           >
             <Text className="text-white">
-              Drink
+            Minum
             </Text>
           </TouchableOpacity>
 
@@ -160,7 +159,7 @@ const DashboardScreen = ({ navigation }) => {
             }
           >
             <Text className="text-white">
-              Packages
+            Paket
             </Text>
           </TouchableOpacity>
 
@@ -172,7 +171,7 @@ const DashboardScreen = ({ navigation }) => {
             }
           >
             <Text className="text-white">
-              Order
+            Pesanan
             </Text>
           </TouchableOpacity>
 

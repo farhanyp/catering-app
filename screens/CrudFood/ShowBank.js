@@ -122,63 +122,65 @@ const ShowBank = ({navigation, banks, token}) => {
                           setNoRek(item ? String(item.noRek) : "");
                           setNameBank(item ? String(item.nameBank) : "");
                           setIsModalVisible(true);
-                        }}>Update</Button>
-                        <Button className="bg-red-500" rippleColor="white" onPress={() => deleteCard(item._id)}>Delete</Button>
+                        }}>Ubah</Button>
+                        <Button className="bg-red-500" rippleColor="white" onPress={() => deleteCard(item._id)}>Hapus</Button>
                         </Card.Actions>
 
                         <Modal visible={isModalVisible} animationType="slide">
-                            <View className="flex justify-end items-end">
-                            <TouchableOpacity
-                                    className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
-                                    onPress={() => setIsModalVisible(false)}
-                                >
-                                    <Text className="text-white font-bold text-xl">X</Text>
-                            </TouchableOpacity>
-                            </View>
-                            <View className="flex justify-center items-center">
-                            <Text className="text-3xl font-bold pb-4">Bank:</Text>
-                            </View>
-                            <TextInput
-                                className="w-full h-12 border rounded p-2 mb-2"
-                                placeholder="Nama"
-                                onChangeText={(text) => setName(text)}
-                                value={name}
-                            />
-                            <TextInput
-                                className="w-full h-12 border rounded p-2 mb-2"
-                                placeholder="Jumlah"
-                                onChangeText={(text) =>setNoRek(text)}
-                                value={noRek}
-                            />
-                            <TextInput
-                                className="w-full h-12 border rounded p-2 mb-2"
-                                placeholder="Harga"
-                                onChangeText={(text) =>setNameBank(text)}
-                                value={nameBank}
-                            />
+                          <View className="flex-1 px-3 text-black">
+                              <View className="flex justify-end items-end">
+                              <TouchableOpacity
+                                      className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
+                                      onPress={() => setIsModalVisible(false)}
+                                  >
+                                      <Text className="text-white font-bold text-xl">X</Text>
+                              </TouchableOpacity>
+                              </View>
+                              <View className="flex justify-center items-center">
+                              <Text className="text-3xl font-bold pb-4">Bank:</Text>
+                              </View>
+                              <TextInput
+                                  className="w-full h-12 border rounded p-2 mb-2"
+                                  placeholder="Nama"
+                                  onChangeText={(text) => setName(text)}
+                                  value={name}
+                              />
+                              <TextInput
+                                  className="w-full h-12 border rounded p-2 mb-2"
+                                  placeholder="Jumlah"
+                                  onChangeText={(text) =>setNoRek(text)}
+                                  value={noRek}
+                              />
+                              <TextInput
+                                  className="w-full h-12 border rounded p-2 mb-2"
+                                  placeholder="Harga"
+                                  onChangeText={(text) =>setNameBank(text)}
+                                  value={nameBank}
+                              />
 
-                                <TouchableOpacity
-                                  className="w-full h-12 bg-blue-500 rounded items-center justify-center"
-                                  onPress={updateOrderData}
-                                >
-                                <Text className="text-white text-lg">
-                                {loading ? (
-                                  <ActivityIndicator
-                                    animating={loading}
-                                    size="large"
-                                  />
-                                ) : (
-                                  "Pesan"
-                                )}
-                              </Text>
-                            </TouchableOpacity>
+                                  <TouchableOpacity
+                                    className="w-full h-12 bg-blue-500 rounded items-center justify-center"
+                                    onPress={updateOrderData}
+                                  >
+                                  <Text className="text-white text-lg">
+                                  {loading ? (
+                                    <ActivityIndicator
+                                      animating={loading}
+                                      size="large"
+                                    />
+                                  ) : (
+                                    "Ubah Data"
+                                  )}
+                                </Text>
+                              </TouchableOpacity>
+                            </View>
                         </Modal>
 
                     </Card>
                 )
                 })
                 ) : (
-                <Text>No data available.</Text>
+                <Text>Tidak ada data yang tersedia.</Text>
                 )}
         </View>
 

@@ -72,7 +72,7 @@ const ShowOrder = ({navigation, orders, token}) => {
                 )
                 })
                 ) : (
-                <Text>No data available.</Text>
+                <Text>Tidak ada data yang tersedia.</Text>
                 )}
         </View>
 

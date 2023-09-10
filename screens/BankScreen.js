@@ -94,7 +94,7 @@ const BankScreen = ({navigation}) => {
           <View className="flex-row items-center mx-4 space-x-2">
             <View className="flex-1">
               <Text className="font-bold text-xl">
-                Bank Catering Online
+                Bank  - Molana Catering
               </Text>
             </View>
           </View>
@@ -127,7 +127,7 @@ const BankScreen = ({navigation}) => {
               }
             >
               <Text className="text-white">
-                Food
+                Makanan
               </Text>
             </TouchableOpacity>
 
@@ -138,7 +138,7 @@ const BankScreen = ({navigation}) => {
               }
             >
               <Text className="text-white">
-                Drink
+              Minuman
               </Text>
             </TouchableOpacity>
 
@@ -150,7 +150,7 @@ const BankScreen = ({navigation}) => {
               }
             >
               <Text className="text-white">
-                Packages
+              Paketan
               </Text>
             </TouchableOpacity>
 
@@ -162,7 +162,7 @@ const BankScreen = ({navigation}) => {
               }
             >
               <Text className="text-white">
-                Order
+              Pesanan
               </Text>
             </TouchableOpacity>
 
@@ -188,7 +188,7 @@ const BankScreen = ({navigation}) => {
               }}
             >
               <Text className="text-white">
-                Create
+                Buat Data
               </Text>
             </TouchableOpacity>
 
@@ -197,51 +197,53 @@ const BankScreen = ({navigation}) => {
       </View>
 
       <Modal visible={isModalVisible} animationType="slide">
-            <View className="flex justify-end items-end">
-            <TouchableOpacity
-                className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
-                onPress={() => setIsModalVisible(false)}
-                >
-                <Text className="text-white font-bold text-xl">X</Text>
-            </TouchableOpacity>
-            </View>
-            <View className="flex justify-center items-center">
-            <Text className="text-3xl font-bold pb-4">Bank:</Text>
-            </View>
-            <TextInput
-            className="w-full h-12 border rounded p-2 mb-2"
-            placeholder="Nama"
-            onChangeText={(text) => setName(text)}
-            value={name}
-            />
-            <TextInput
-            className="w-full h-12 border rounded p-2 mb-2"
-            placeholder="Nomor Rekening"
-            onChangeText={(text) => setNoRek(text)}
-            value={noRek}
-            />
-            <TextInput
-            className="w-full h-12 border rounded p-2 mb-2"
-            placeholder="Nama Bank"
-            onChangeText={(text) => setNameBank(text)}
-            value={nameBank}
-            />
+      <View className="flex-1 px-3 text-black">
+              <View className="flex justify-end items-end">
+              <TouchableOpacity
+                  className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
+                  onPress={() => setIsModalVisible(false)}
+                  >
+                  <Text className="text-white font-bold text-xl">X</Text>
+              </TouchableOpacity>
+              </View>
+              <View className="flex justify-center items-center">
+              <Text className="text-3xl font-bold pb-4">Bank:</Text>
+              </View>
+              <TextInput
+              className="w-full h-12 border rounded p-2 mb-2"
+              placeholder="Nama"
+              onChangeText={(text) => setName(text)}
+              value={name}
+              />
+              <TextInput
+              className="w-full h-12 border rounded p-2 mb-2"
+              placeholder="Nomor Rekening"
+              onChangeText={(text) => setNoRek(text)}
+              value={noRek}
+              />
+              <TextInput
+              className="w-full h-12 border rounded p-2 mb-2"
+              placeholder="Nama Bank"
+              onChangeText={(text) => setNameBank(text)}
+              value={nameBank}
+              />
 
-            <TouchableOpacity
-            className="w-full h-12 bg-blue-500 rounded items-center justify-center"
-            onPress={postOrderData}
-            >
-            <Text className="text-white text-lg">
-            {loading ? (
-            <ActivityIndicator
-                animating={loading}
-                size="large"
-            />
-            ) : (
-            "Pesan"
-            )}
-        </Text>
-        </TouchableOpacity>
+              <TouchableOpacity
+              className="w-full h-12 bg-blue-500 rounded items-center justify-center"
+              onPress={postOrderData}
+              >
+              <Text className="text-white text-lg">
+              {loading ? (
+              <ActivityIndicator
+                  animating={loading}
+                  size="large"
+              />
+              ) : (
+              "Buat Data"
+              )}
+          </Text>
+          </TouchableOpacity>
+          </View>
       </Modal>
 
       <View>

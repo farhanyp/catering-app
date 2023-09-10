@@ -196,7 +196,7 @@ const PackageScreen = ({ navigation }) => {
         <View className="flex-row items-center mx-4 space-x-2">
           <View className="flex-1">
             <Text className="font-bold text-xl">
-              Package Catering Online
+              Paketan - Molana Catering
             </Text>
           </View>
         </View>
@@ -228,7 +228,7 @@ const PackageScreen = ({ navigation }) => {
               }
             >
               <Text className="text-white">
-                Food
+                Makanan
               </Text>
             </TouchableOpacity>
 
@@ -239,7 +239,7 @@ const PackageScreen = ({ navigation }) => {
               }
             >
               <Text className="text-white">
-                Drink
+                Minuman
               </Text>
             </TouchableOpacity>
 
@@ -250,7 +250,7 @@ const PackageScreen = ({ navigation }) => {
               }
             >
               <Text className="text-white">
-                Packages
+                Paketan
               </Text>
             </TouchableOpacity>
 
@@ -261,7 +261,7 @@ const PackageScreen = ({ navigation }) => {
               }
             >
               <Text className="text-white">
-                Order
+                Pesanan
               </Text>
             </TouchableOpacity>
 
@@ -305,7 +305,7 @@ const PackageScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View className="flex justify-center items-center">
-          <Text className="text-3xl font-bold pb-4">Package:</Text>
+          <Text className="text-3xl font-bold pb-4">Paket:</Text>
         </View>
         <TextInput
           className="w-full h-12 border rounded p-2 mb-2"
@@ -404,7 +404,7 @@ const PackageScreen = ({ navigation }) => {
                     size="large"
                   />
                 ) : (
-                  "Pesan"
+                  "Buat Data"
                 )}
               </Text>
             </TouchableOpacity>

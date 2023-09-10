@@ -185,7 +185,7 @@ const ShowFood = ({navigation, foods, token}) => {
                           setDescription(item ? item.description : "");
                           setIsModalVisible(true);
                         }}>Update</Button>
-                        <Button className="bg-red-500" rippleColor="white" onPress={() => deleteCard(item._id)}>Delete</Button>
+                        <Button className="bg-red-500" rippleColor="white" onPress={() => deleteCard(item._id)}>Hapus</Button>
                         </Card.Actions>
 
                         <Modal visible={isModalVisible} animationType="slide">
@@ -199,7 +199,7 @@ const ShowFood = ({navigation, foods, token}) => {
                             </TouchableOpacity>
                             </View>
                             <View className="flex justify-center items-center">
-                            <Text className="text-3xl font-bold pb-4">Produk:</Text>
+                            <Text className="text-3xl font-bold pb-4">Makanan:</Text>
                             </View>
                             <TextInput
                                 className="w-full h-12 border rounded p-2 mb-2"
@@ -244,7 +244,7 @@ const ShowFood = ({navigation, foods, token}) => {
                                         size="large"
                                       />
                                     ) : (
-                                      "Pesan"
+                                      "Ubah Data"
                                     )}
                                   </Text>
                                 </TouchableOpacity>  
@@ -256,7 +256,7 @@ const ShowFood = ({navigation, foods, token}) => {
                 )
                 })
                 ) : (
-                <Text>No data available.</Text>
+                <Text>Tidak ada data yang tersedia.</Text>
                 )}
         </View>
 

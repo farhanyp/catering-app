@@ -1,11 +1,8 @@
 import React, {useLayoutEffect, useState} from 'react';
-import { Avatar, Button, Card, Text, BottomNavigation } from 'react-native-paper';
-import { View, Image, ActivityIndicator, Alert, ScrollView, Modal, TouchableOpacity, TextInput } from 'react-native';
+import { Button, Card, Text } from 'react-native-paper';
+import { View, Image, ActivityIndicator, Alert, ScrollView } from 'react-native';
 import axios from 'axios';
-import * as ImagePicker from 'expo-image-picker';
-import DropDownPicker from 'react-native-dropdown-picker';
 import {useForm, Controller} from 'react-hook-form';
-import * as FileSystem from 'expo-file-system';
 
 const ShowPackage = ({navigation, packages, token}) => {
     const [isLoading , setIsLoading] = useState(true)
@@ -163,7 +160,7 @@ const ShowPackage = ({navigation, packages, token}) => {
                 return(
                   <Card theme={{ mode: "outlined" }} key={index}>
                   {
-                    item.food === null && item.drink === null ?
+                    item.food !== null && item.drink !== null ?
                     <>
                     <Card.Content>
                           <Text className="font-bold capitalize text-2xl" variant="titleLarge">Nama Paket: {item.package.name}</Text>
@@ -197,7 +194,7 @@ const ShowPackage = ({navigation, packages, token}) => {
                           <Text variant="bodyMedium">Harga Original Paket: {((item.food.price + item.drink.price)-item.package.discount).toLocaleString("id-ID")}</Text>
                         </Card.Content>
                         <Card.Content>
-                        <Button className="bg-red-500 mt-4" rippleColor="white" onPress={() => deleteCard(item.package._id)}>
+                        <Button className="bg-red-500 mt-4 mb-4" rippleColor="white" onPress={() => deleteCard(item.package._id)}>
                           <Text className="text-white">Delete</Text>
                         </Button>
                         </Card.Content>
@@ -206,7 +203,7 @@ const ShowPackage = ({navigation, packages, token}) => {
                     <View>
                       <Text  className="text-center">Food atau Drink tidak ada, disarankan untuk menghapus paket</Text>
                       <Button className="bg-red-500 mt-4" rippleColor="white" onPress={() => deleteCard(item.package._id)}>
-                          <Text className="text-white">Delete</Text>
+                          <Text className="text-white">Hapus</Text>
                       </Button>
                     </View>
                     
@@ -216,7 +213,7 @@ const ShowPackage = ({navigation, packages, token}) => {
                 )
                 })
                 ) : (
-                <Text>No data available.</Text>
+                <Text>Tidak ada data yang tersedia.</Text>
                 )}
         </View>
 

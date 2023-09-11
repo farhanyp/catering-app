@@ -19,15 +19,22 @@ const DashboardScreen = ({ navigation }) => {
   const [orderData, setOrderData] = useState([]);
   const [ token, setToken] = useState("")
   const [dataFetched, setDataFetched] = useState(false);
+  const [dataAvailable, setDataAvailable] = useState(false);
 
   useLayoutEffect(() => {
-    checkUserAccess();
-    if (orderData.length === 0 && token !== "") {
-      fetchOrderData()
-    }
     navigation.setOptions({
       headerShown: false,
     });
+    setTimeout(() => {
+      setIsLoading(false);
+      if (orderData && orderData.length > 0) {
+        setDataAvailable(true);
+      }
+      checkUserAccess();
+      if (orderData.length === 0 && token !== "") {
+        fetchOrderData()
+      }
+    }, 6000);
   }, [dataFetched, token, orderData]);
 
   const checkUserAccess = async () => {

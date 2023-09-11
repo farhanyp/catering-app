@@ -132,12 +132,12 @@ const DetailPackageCard = ({ route, navigation }) => {
       navigation.navigate("Home");
     } catch (error) {
       console.log(error.response.data)
-      // if (error.response.data.errors) {
-      //   Alert.alert(
-      //     "Kesalahan Login",
-      //     error.response.data.errors
-      //   );
-      // }
+        if (error.response) {
+          Alert.alert(
+            "Kesalahan Login",
+            error.response.data.errors
+          );
+        }
       setLoading(false);
     }
   };
@@ -212,6 +212,7 @@ const DetailPackageCard = ({ route, navigation }) => {
               </View>
 
               <Modal visible={isModalVisible} animationType="slide">
+              <View className="flex-1 px-3 text-black">
                 <View className="flex justify-end items-end">
                 <TouchableOpacity
                       className=" bg-gray-500 w-10 h-10 rounded justify-center items-center"
@@ -223,7 +224,7 @@ const DetailPackageCard = ({ route, navigation }) => {
                 <View className="flex justify-center items-center">
                 <Text className="text-3xl font-bold pb-4">Paket:</Text>
                 </View>
-                <View className="flex-row gap-3 items-center justify-center">
+                <View className="flex-row gap-3 items-center justify-center pb-5">
                   {/* Tampilkan data bank */}
                   {bankData.map((bank) => (
                     <View key={bank._id} className="grid-cols-3 justify-center p-3 shadow w-40 bg-slate-300">
@@ -276,6 +277,7 @@ const DetailPackageCard = ({ route, navigation }) => {
                 </TouchableOpacity>
                 : null
                   }
+                  </View>
               </Modal>
 
               <View className="shadow bg-white flex-col justify-center items-center pt-5 px-5 py-5">

@@ -94,7 +94,7 @@ const BankScreen = ({navigation}) => {
           <View className="flex-row items-center mx-4 space-x-2">
             <View className="flex-1">
               <Text className="font-bold text-xl">
-                Bank  - Molana Catering
+                Bank  - Maulana Catering
               </Text>
             </View>
           </View>

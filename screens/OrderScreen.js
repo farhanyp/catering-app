@@ -56,7 +56,7 @@ const OrderScreen = ({navigation}) => {
           <View className="flex-row items-center mx-4 space-x-2">
             <View className="flex-1">
               <Text className="font-bold text-xl">
-                Order - Molana Catering
+                Order - Maulana Catering
               </Text>
             </View>
           </View>

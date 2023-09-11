@@ -151,7 +151,7 @@ const DetailDrinkCard = ({ route, navigation }) => {
     >
       <View className="flex-1 items-center">
         <Text className="font-bold text-2xl mb-4">
-          Detail Minuman
+        Minuman
         </Text>
 
         <Image

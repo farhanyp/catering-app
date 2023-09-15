@@ -26,7 +26,6 @@ const DashboardScreen = ({ navigation }) => {
       headerShown: false,
     });
     setTimeout(() => {
-      setIsLoading(false);
       if (orderData && orderData.length > 0) {
         setDataAvailable(true);
       }

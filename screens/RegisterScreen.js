@@ -16,6 +16,8 @@ import axios from "axios";
 const RegisterScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
 
   useLayoutEffect(() => {
@@ -32,6 +34,8 @@ const RegisterScreen = ({ navigation }) => {
         {
           username: username,
           password: password,
+          address: address,
+          phoneNumber: phone,
         }
       );
 
@@ -69,6 +73,19 @@ const RegisterScreen = ({ navigation }) => {
         onChangeText={(text) => setPassword(text)}
         value={password}
         secureTextEntry={true}
+      />
+      <TextInput
+        className="w-full h-12 border rounded p-2 mb-2"
+        placeholder="Alamat"
+        onChangeText={(text) => setAddress(text)}
+        value={address}
+      />
+      <TextInput
+        className="w-full h-12 border rounded p-2 mb-2"
+        placeholder="Nomor Hp"
+        onChangeText={(text) => setPhone(text)}
+        value={phone}
+        inputMode="numeric"
       />
       <TouchableOpacity
         className="w-full h-12 bg-slate-500 rounded items-center justify-center"

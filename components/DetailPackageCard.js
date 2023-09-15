@@ -330,7 +330,7 @@ const DetailPackageCard = ({ route, navigation }) => {
                   placeholder=""
                   onChangeText={(numeric) => setCount(numeric)}
                   value={count}
-                  inputMode="numeric"
+                  keyboardType="numeric"
                 />
                 <Text className="text-base mb-1"> Jumlah</Text>
                 </View>

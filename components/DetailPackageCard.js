@@ -322,16 +322,19 @@ const DetailPackageCard = ({ route, navigation }) => {
               </Text>
             </View>
             <View className="flex-row justify-center items-center w-52">
-              <TouchableOpacity className="bg-blue-500 w-8 h-8 rounded items-center justify-center mr-5" onPress={DescPackageQty}>
-                <Text className="text-white font-bold text-3xl">-</Text>
-              </TouchableOpacity>
               <View>
                 <Text className="font-bold text-lg mb-1">QTY:</Text>
-                <Text className="text-center font-semibold text-lg mb-1">{count}</Text>
+                <View className="flex-row justify-center items-center w-20">
+                <TextInput
+                  className="w-full h-12 border rounded p-2 mb-2"
+                  placeholder=""
+                  onChangeText={(numeric) => setCount(numeric)}
+                  value={count}
+                  inputMode="numeric"
+                />
+                <Text className="text-base mb-1"> Jumlah</Text>
+                </View>
               </View>
-              <TouchableOpacity className="bg-blue-500 w-8 h-8 rounded items-center justify-center ml-5" onPress={IncPackageQty}>
-              <Text className="text-white font-bold text-3xl">+</Text>
-            </TouchableOpacity>
             </View>
           </View>
           

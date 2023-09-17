@@ -49,13 +49,13 @@ const ShowHistory = ({navigation, history, token}) => {
                               <Text variant="bodyMedium">Makanan: {no}. {item.history.foodId[0].name} ({item.history.qtyFood})</Text>
                               <Text variant="bodyMedium">Minuman: {no}. {item.history.drinkId[0].name} ({item.history.qtyDrink})</Text>
                             </View>
-                          ) : item.foodId.length !== 0 ? (
+                          ) : item.history.foodId.length !== 0 ? (
                             <View>
                               <Text variant="bodyMedium">Makanan: {no}. {item.history.foodId[0].name} ({item.history.qtyFood})</Text>
                             </View>
-                          ) : item.drinkId.length !== 0 ? (
+                          ) : item.history.drinkId.length !== 0 ? (
                             <View>
-                            <Text variant="bodyMedium">Minuman: {index}. {item.history.drinkId[0].name} ({item.history.qtyDrink})</Text>
+                            <Text variant="bodyMedium">Minuman: {no}. {item.history.drinkId[0].name} ({item.history.qtyDrink})</Text>
                             </View>
                           ) : null
                         }

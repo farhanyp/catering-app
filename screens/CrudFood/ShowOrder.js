@@ -54,7 +54,7 @@ const ShowOrder = ({navigation, orders, token}) => {
                             </View>
                           ) : item.drinkId.length !== 0 ? (
                             <View>
-                            <Text variant="bodyMedium">Minuman: {index}. Teh Manis ({item.qtyDrink})</Text>
+                            <Text variant="bodyMedium">Minuman: {no}. Teh Manis ({item.qtyDrink})</Text>
                             </View>
                           ) : null
                         }

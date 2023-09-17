@@ -18,6 +18,7 @@ const RegisterScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+  const [postalCode, setPostalCode] = useState("");
   const [loading, setLoading] = useState(false);
 
   useLayoutEffect(() => {
@@ -36,6 +37,7 @@ const RegisterScreen = ({ navigation }) => {
           password: password,
           address: address,
           phoneNumber: phone,
+          postalCode: postalCode,
         }
       );
 
@@ -85,6 +87,13 @@ const RegisterScreen = ({ navigation }) => {
         placeholder="Nomor Hp"
         onChangeText={(text) => setPhone(text)}
         value={phone}
+        inputMode="numeric"
+      />
+      <TextInput
+        className="w-full h-12 border rounded p-2 mb-2"
+        placeholder="Kode Pos"
+        onChangeText={(text) => setPostalCode(text)}
+        value={postalCode}
         inputMode="numeric"
       />
       <TouchableOpacity

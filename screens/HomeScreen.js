@@ -67,35 +67,47 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView>
       <View className="pt-3 bg-white">
         {/* headers */}
-
-        <View className="flex-row pb-3 items-center mx-4 space-x-2">
-          <Image
-            source={{
-              uri:
-                "https://links.papareact.com/wru",
-            }}
-            className="h-7 w-7 bg-gray-300 p-4 rounded-full"
-          />
-
-          <View className="flex-1">
-            <Text className="font-bold text-xl">
-              Maulana Catering
-            </Text>
-          </View>
-
-          <TouchableOpacity>
-            <PowerIcon
-              width={25}
-              height={25}
-              onPress={handleLogout}
+        
+        <View>
+          <View className="flex-row pb-3 items-center mx-4 space-x-2">
+            <Image
+              source={{
+                uri:
+                  "https://links.papareact.com/wru",
+              }}
+              className="h-7 w-7 bg-gray-300 p-4 rounded-full"
             />
-          </TouchableOpacity>
+
+            <View className="flex-1">
+              <Text className="font-bold text-xl">
+                Maulana Catering
+              </Text>
+            </View>
+
+            <TouchableOpacity>
+              <PowerIcon
+                width={25}
+                height={25}
+                onPress={handleLogout}
+              />
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity
+              className=" bg-slate-500 w-20 h-10 mb-4 ml-4 rounded items-center justify-center"
+              onPress={() =>
+                navigation.navigate("HistoryScreen")
+              }
+            >
+              <Text className="text-white">
+                History
+              </Text>
+            </TouchableOpacity>
         </View>
 
         <ScrollView
           className="bg-gray-100"
           contentContainerStyle={{
-            paddingBottom: 100,
+            paddingBottom: 300,
           }}
         >
           {/* Featured Rows */}

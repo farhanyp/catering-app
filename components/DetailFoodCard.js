@@ -6,12 +6,14 @@ import { View, Text, Image, ScrollView, TouchableOpacity, Modal, Alert, Activity
 import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DetailFoodCard = ({ route, navigation }) => {
   const { data } = route.params;
   const [bankData, setBankData] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [token, setToken] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
@@ -26,6 +28,7 @@ const DetailFoodCard = ({ route, navigation }) => {
     navigation.setOptions({
       headerShown: false,
     });
+    getToken()
     getPriceTotal()
   }, [navigation, count, priceTotal,isModalVisible]);
 
@@ -34,6 +37,15 @@ const DetailFoodCard = ({ route, navigation }) => {
       setPriceTotal(count * data.price)
     }
   }
+
+  const getToken = async () => {
+    const token = await AsyncStorage.getItem(
+      "token"
+    );
+    if(token){
+      setToken(token)
+    }
+};
 
   const IncPackageQty = () => {
     
@@ -118,6 +130,7 @@ const DetailFoodCard = ({ route, navigation }) => {
       const response = await axios.post(
         "https://backend-chatering-online.vercel.app/api/v1/member/order", formData ,{
           headers:{
+            'Authorization': `${token}`,
             "Content-Type": "multipart/form-data"
           }
         }
@@ -253,6 +266,7 @@ const DetailFoodCard = ({ route, navigation }) => {
                   placeholder="Nomor HP"
                   onChangeText={(text) => setPhone(text)}
                   value={phone}
+                  inputMode="numeric"
                 />
                   <TouchableOpacity
                     style={{ backgroundColor: 'blue', padding: 10, borderRadius: 5, marginVertical: 10 }}

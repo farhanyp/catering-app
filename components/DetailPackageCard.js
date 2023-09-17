@@ -6,12 +6,14 @@ import { View, Text, Image, ScrollView, TouchableOpacity, Modal, Alert, Activity
 import axios from 'axios';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DetailPackageCard = ({ route, navigation }) => {
   const { data } = route.params;
   const [bankData, setBankData] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [token, setToken] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
@@ -26,6 +28,7 @@ const DetailPackageCard = ({ route, navigation }) => {
     navigation.setOptions({
       headerShown: false,
     });
+    getToken()
     getPriceTotal()
   }, [navigation, priceTotal, count]);
 
@@ -35,15 +38,14 @@ const DetailPackageCard = ({ route, navigation }) => {
     }
   }
 
-  const IncPackageQty = () => {
-    setCount(prevCount => prevCount + 1)
-  }
-
-  const DescPackageQty = () => {
-    if(count > 1 ){
-      setCount(count - 1)
-    }
-  }
+  const getToken = async () => {
+      const token = await AsyncStorage.getItem(
+        "token"
+      );
+      if(token){
+        setToken(token)
+      }
+  };
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -113,11 +115,11 @@ const DetailPackageCard = ({ route, navigation }) => {
       formData.append('foodId', data.food._id);
       formData.append('drinkId', data.drink._id);
       formData.append('totalPrice', priceTotal);
-
       const response = await axios.post(
         "https://backend-chatering-online.vercel.app/api/v1/member/order",
         formData ,{
           headers:{
+            'Authorization': `${token}`,
             "Content-Type": "multipart/form-data",
           }
         }
@@ -201,7 +203,7 @@ const DetailPackageCard = ({ route, navigation }) => {
                   }}
                 />
                 <Text className="font-bold text-lg mb-1">
-                  Nama Makanan: {data.food.name}
+                {data.food.name}
                 </Text>
                 <Text className="text-lg mb-4">
                   Harga:
@@ -250,6 +252,7 @@ const DetailPackageCard = ({ route, navigation }) => {
                   className="w-full h-12 border rounded p-2 mb-2"
                   placeholder="Nomor HP"
                   onChangeText={(text) => setPhone(text)}
+                  inputMode="numeric"
                   value={phone}
                 />
                   <TouchableOpacity
@@ -295,7 +298,7 @@ const DetailPackageCard = ({ route, navigation }) => {
                   }}
                 />
                 <Text className="font-bold text-lg mb-1">
-                  Nama Minuman:
+                {data.drink.name}
                 </Text>
                 <Text className="text-lg mb-4">
                   Harga:

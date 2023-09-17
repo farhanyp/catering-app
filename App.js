@@ -15,6 +15,7 @@ import DetailDrinkCard from "./components/DetailDrinkCard";
 import PackageScreen from "./screens/PackageScreen";
 import BankScreen from "./screens/BankScreen";
 import OrderScreen from "./screens/OrderScreen";
+import HistoryScreen from "./screens/HistoryScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -74,6 +75,9 @@ export default function App() {
           <Stack.Screen
             name="BankScreen"
             component={BankScreen}
+          /><Stack.Screen
+            name="HistoryScreen"
+            component={HistoryScreen}
           />
         </Stack.Navigator>
       </SafeAreaProvider>
